@@ -1,0 +1,8 @@
+t.color('orange')
+t.pu()
+t.goto(0, 0)
+t.pd()
+for x in range(2, 201):
+    t.goto(x*2, divisao(1/x*2))
+sleep(2)
+t.clear()
