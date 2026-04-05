@@ -5,8 +5,8 @@ from time import sleep
 t = Turtle()
 t.speed(0)
 
-def soma_2 (x):
-    return x + 2
+#def soma_2 (x):
+#    return x + 2
 
 def raiz(x):
     return x**0.5 
@@ -16,6 +16,15 @@ def divisao(x):
 
 def quadrado(x):
     return 2**x
+
+def quartafuncao(X):
+    return 5 - x**2
+
+def quintafuncao(x):
+    return x**2 - 5*x + 6
+
+def sextafuncao(x):
+    return x**3 - x**2 - x +1 
 
 #Plano cartesiano
 
@@ -90,7 +99,7 @@ for x in range(2, 301):
     y= divisao(x/50) * 10
     t.goto(x,y)
 sleep(2)
-t.clear
+t.clear()
 
 
 
@@ -102,11 +111,71 @@ plano_cartesiano(0, -500, 900, -500, 0, 970)
 
 t.color('pink')
 t.pu()
-t.goto(0, 0)
+x= -100
+y= quadrado(x) 
+t.goto(x * 3, quadrado(x))
 t.pd()
-for x in range(2, 201):
-    t.goto(2*x, quadrado(2*x))
+for x in range (-75, 200):
+    y= quadrado(x)
+    t.goto(x*3 , y)
+
 sleep(2)
+t.clear()
+
+#quarta funcao
+
+t.color('black')
+plano_cartesiano(0, -500, 900, -500, 0, 970)
+
+t.color('cyan')
+t.pu()
+x= -100
+y= quartafuncao(x)
+t.goto(x,y)
+t.pd()
+for x in range (-100, 101):
+    y = quartafuncao(x)
+    t.goto(x*3,y*3)
+sleep(2)
+t.clear()
+
+#quinta funcao
+
+t.color('black')
+plano_cartesiano(0, -500, 900, -500, 0, 970)
+
+t.color('yellow')
+t.pu()
+x=-100
+y= quintafuncao(x)
+t.goto(x,y)
+t.pd()
+for x in range(-100, 101):
+    y=quintafuncao(x)
+    t.goto(x*3,y*3)
+sleep(2)
+t.clear()
+
+#sexta funcao
+
+t.color('black')
+plano_cartesiano(0, -500, 900, -500, 0, 970)
+
+t.color('green')
+t.pu()
+x= -100
+y= sextafuncao(x)
+t.goto(x,y)
+t.pd()
+for x in range(-100, 101):
+    y= sextafuncao(x)
+    t.goto(x*3,y*3)
+sleep(2)
+t.clear()
+
+
+
+
 
 
 
